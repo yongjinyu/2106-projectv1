@@ -25,6 +25,8 @@ namespace SentosaWebsite.Controllers
         // GET: Restaurant
         public ActionResult DisplayPage()
         {
+            
+
             ViewBag.Message = "lailai restaurant";
 
             return View(dataGateway.SelectAll());

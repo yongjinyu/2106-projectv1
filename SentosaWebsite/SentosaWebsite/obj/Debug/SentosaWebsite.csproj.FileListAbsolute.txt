@@ -479,3 +479,4 @@ C:\Users\jinyu\Documents\ICT 2106 - Software Design\Projectv2\back up sentosa v1
 C:\Users\jinyu\Documents\ICT 2106 - Software Design\Projectv2\back up sentosa v1\SentosaWebsite\SentosaWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\jinyu\Documents\ICT 2106 - Software Design\Projectv2\back up sentosa v1\SentosaWebsite\SentosaWebsite\obj\Debug\SentosaWebsite.dll
 C:\Users\jinyu\Documents\ICT 2106 - Software Design\Projectv2\back up sentosa v1\SentosaWebsite\SentosaWebsite\obj\Debug\SentosaWebsite.pdb
+C:\Users\jinyu\Documents\ICT 2106 - Software Design\Projectv2\back up sentosa v1\SentosaWebsite\SentosaWebsite\obj\Debug\SentosaWebsite.csprojResolveAssemblyReference.cache
