@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SentosaWebsite.Models.Restaurant>
+
+@{
+    ViewBag.Title = "DisplayPage";
+}
+
+<h2>@ViewBag.Message</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.restName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restDes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.restType)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.restName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.restImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.restDes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.restType)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            </td>
+        </tr>
+    }
+    <p>
+        @Html.ActionLink("Back to Index", "Index")
+    </p>
+
+</table>

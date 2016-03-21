@@ -1,0 +1,105 @@
+﻿@model SentosaWebsite.Models.Attraction
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Attraction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.atName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.atDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atDes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atLocLat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atLocLat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atLocLong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atLocLong)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atOpeningHourWeekend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atOpeningHourWeekend)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atClosingHourWeekend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atClosingHourWeekend)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atOpeningHourWeekday)
+        </dt>
+
+        <dd>
+        @Html.DisplayFor(model => model.atOpeningHourWeekday)
+        </dd>
+        <dt>
+        @Html.DisplayNameFor(model => model.atClosingHourWeekday)
+        </dt>
+        <dd>
+        @Html.DisplayFor(model => model.atClosingHourWeekday)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atAdultPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.atAdultPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.atChildPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.atChildPrice)
+        </dd><dt>
+    @Html.DisplayNameFor(model => model.atHowToGetThere)
+    </dt>
+    <dd>
+    @Html.DisplayFor(model => model.atHowToGetThere)
+</dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> or
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

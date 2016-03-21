@@ -1,0 +1,100 @@
+﻿@model SentosaWebsite.Models.Restaurant
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Attraction</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.atName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.atName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.atName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.atDes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.atDes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.atDes, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.atType, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.atType, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.atDes, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.atLocLat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.atLocLat, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.atLocLat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.atLocLong, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.atLocLong, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.atLocLong, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        }
+
+        @*Use to add picture/photo into the Images file or delete image if Images with the corresponding ID is found.
+            Problem is only one picture for one entry, need to be upgrade later *@
+        @if (File.Exists(Server.MapPath("~/Images/Attractions/"
+         + Html.DisplayFor(modelItem => Model.atImage))))
+        {
+            <img alt="" src="~/Images/Attractions/@Html.DisplayFor(modelItem   => Model.atImage)" />
+            <form action="/Attractions/DeletePhoto" method="post" name="deletePhoto">
+                @Html.AntiForgeryToken()
+
+                If the image above is not the correct image,
+                hit delete and Re-Upload:
+
+                <input type="text" name="photoFileName" value="@Html.DisplayFor(modelItem          => Model.atImage)" />
+
+                <input class="tiny button" type="submit" value="Delete" />
+            </form>
+        }
+        else
+        {
+            <form action="/Attractions/UploadPhoto" enctype="multipart/form-data" method="post">
+                <label for="photo">Upload a Photo:</label>
+                <input class="tiny button" id="photo" type="file" name="photo" />
+                <input class="tiny button" type="submit" value="Upload" />
+                <input type="hidden" name="attractionsImage" value="@Html.DisplayFor(modelItem   => Model.atImage)" />
+            </form>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

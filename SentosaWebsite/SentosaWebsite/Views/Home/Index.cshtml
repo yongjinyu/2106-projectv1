@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Sentosa Website !!!!</h1>
+    <p class="lead">Sentosa Website is to go for anything SENTOSA!! Everything can be found here from attractions to weather!</p>
+    <p><a onclick="window.location.href='@Url.Action(" Abour", "HomeController" ) class="btn btn-primary btn-lg" value="About"></a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <h2>Getting started</h2>
+        <p>
+            THIS BUTTON HERE WILL BRING YOU TO OUR LIST OF ATTRACTION!!!!!!!!!!!!!
+        </p>
+        <p><input type="button" value="Attraction" onclick="window.location.href='@Url.Action("DisplayPage", "Attractions" )';" /></p>
+    </div>
+    
+</div>

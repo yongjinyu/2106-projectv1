@@ -1,0 +1,100 @@
+﻿@model SentosaWebsite.Models.Attraction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h2>Details</h2>
+
+<div>
+    <h4>Attraction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Attraction Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atName)
+        </dd>
+
+        <dt>
+            Description:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atDes)
+        </dd>
+        <dt>
+            Attraction Type:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atType)
+        </dd>
+        <dt>
+            opening hours weekend:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atOpeningHourWeekend)
+        </dd>
+        <dt>
+    closing hours weekend:
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.atClosingHourWeekend)
+</dd>
+        <dt>
+            opening hours weekday:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.atOpeningHourWeekday)
+        </dd><dt>
+    closing hours weekday:
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.atClosingHourWeekday)
+</dd>    
+        
+        <dt>
+    Adult price:
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.atAdultPrice)
+</dd><dt>
+    Child price:
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.atChildPrice)
+</dd><dt>
+   How  to get there:
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.atHowToGetThere)
+</dd><dt>
+    
+</dt>
+
+        <img alt="" src="~/Images/Attractions/@Html.DisplayFor(modelItem => Model.atImage) " />
+
+    </dl>
+
+    <br />
+    <div id="map_canvas" style="width: 640px; height: 480px;">
+    </div>  
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+ 

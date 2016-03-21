@@ -1,0 +1,50 @@
+﻿@model SentosaWebsite.Models.Restaurant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h2>Details</h2>
+
+<div>
+    <h4>Restaurant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Restaurant Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restName)
+        </dd>
+
+        <dt>
+            Description:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restDes)
+        </dd>
+        <dt>
+            Restaurant Type:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restType)
+        </dd>
+
+        <img alt="" src="~/Images/RetaurantImg/@Html.DisplayFor(modelItem => Model.restImage) " />
+
+    </dl>
+
+    <br />
+    <div id="map_canvas" style="width: 640px; height: 480px;">
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

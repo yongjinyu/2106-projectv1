@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SentosaWebsite.Models.Attraction>
+
+@{
+    ViewBag.Title = "DisplayPage";
+}
+
+<h2>@ViewBag.Message</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.atName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.atDes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.atType)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+         @Html.DisplayFor(modelItem => item.atImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.atName)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.atDes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.atType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.testing.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+        </td>
+    </tr>
+}
+    <p>
+        @Html.ActionLink("Back to Index", "Index")
+    </p>
+
+</table>
