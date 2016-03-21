@@ -10,6 +10,11 @@ namespace SentosaWebsite.Models
         public string restType { get; set; }
         public string restLocLat { get; set; }
         public string restLocLong { get; set; }
+      
+
+
+
+
         public string restImage
         //For the Images 
         {

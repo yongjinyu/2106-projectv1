@@ -37,11 +37,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.atType)
         </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.testing.price)
+            @Html.DisplayFor(modelItem => item.atTransportMode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ID)
+            @Html.DisplayFor(modelItem => item.atTransportDes)
         </td>
         <td>
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |

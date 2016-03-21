@@ -10,18 +10,16 @@ namespace SentosaWebsite.Models
         public string atType { get; set; }
         public string atLocLat { get; set; }
         public string atLocLong { get; set; }
-        public string atOpeningHourWeekend { get; set; }
-        public string atOpeningHourWeekday { get; set; }
-        public string atClosingHourWeekend { get; set; }
-        public string atClosingHourWeekday { get; set; }
-        public string atAdultPrice { get; set; }
-        public string atChildPrice { get; set;  }
-        public string atHowToGetThere { get; set; }
+        public string atTransportMode { get; set; }
+        public string atTransportDes { get; set; }
 
-
-        public TicketPrice testing { get; set; }
+        // for setting ticketprice 
+        public TicketPrice myTicket { get; set; }
+        // for setting opening hour
+        public Hour myOpeningHour {get ; set;}
+       
+        
         // public TicketPrice price { get; set; }
-
         //public void setMyTicketType(TicketPrice obj)
         //{
         //    this.ticketType = value1;
@@ -31,10 +29,13 @@ namespace SentosaWebsite.Models
 
         public void setMyTicketType(TicketPrice obj)
         {
-               this.testing = obj;
+               this.myTicket = obj;
           
         }
-
+        public void setMyOpeningHour(Hour obj2)
+        {
+            this.myOpeningHour = obj2;
+        }
         public string atImage
             //For the Images 
         {

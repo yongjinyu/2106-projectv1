@@ -185,6 +185,7 @@
     <Compile Include="Models\Attraction.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Hour.cs" />
     <Compile Include="Models\TicketPrice.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -256,6 +257,7 @@
     <Content Include="Views\Restaurant\Index.cshtml" />
     <Content Include="Views\Restaurant\DisplayPage.cshtml" />
     <Content Include="Views\Restaurant\Delete.cshtml" />
+    <Content Include="Views\Attractions\CreateTicket.cshtml" />
     <Content Include="Views\Restaurant\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>

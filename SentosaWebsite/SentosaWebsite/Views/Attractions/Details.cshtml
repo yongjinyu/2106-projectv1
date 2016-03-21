@@ -35,54 +35,19 @@
             @Html.DisplayFor(model => model.atType)
         </dd>
         <dt>
-            opening hours weekend:
+           Transport mode
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.atOpeningHourWeekend)
+            @Html.DisplayFor(model => model.atTransportMode)
         </dd>
         <dt>
-    closing hours weekend:
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.atClosingHourWeekend)
-</dd>
-        <dt>
-            opening hours weekday:
+            Transport description
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.atOpeningHourWeekday)
-        </dd><dt>
-    closing hours weekday:
-</dt>
+            @Html.DisplayFor(model => model.atTransportDes)
+        </dd> 
 
-<dd>
-    @Html.DisplayFor(model => model.atClosingHourWeekday)
-</dd>    
-        
-        <dt>
-    Adult price:
-</dt>
 
-<dd>
-    @Html.DisplayFor(model => model.atAdultPrice)
-</dd><dt>
-    Child price:
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.atChildPrice)
-</dd><dt>
-   How  to get there:
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.atHowToGetThere)
-</dd><dt>
-    
-</dt>
 
         <img alt="" src="~/Images/Attractions/@Html.DisplayFor(modelItem => Model.atImage) " />
 
@@ -94,6 +59,7 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+  
     @Html.ActionLink("Back to List", "Index")
 </p>
 

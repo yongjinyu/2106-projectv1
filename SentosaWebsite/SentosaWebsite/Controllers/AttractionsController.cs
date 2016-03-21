@@ -60,14 +60,13 @@ namespace SentosaWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,atName,atDes,atType,atLocLat,atLocLong,atOpeningHourWeekend,atClosingHourWeekend,atOpeningHourWeekday,atClosingHourWeekday,atAdultPrice,atChildPrice,atHowToGetThere , testing")] Attraction attraction)
+        public ActionResult Create([Bind(Include = "ID,atName,atDes,atType,atLocLat,atLocLong,atTransportMode,atTransportDes")] Attraction attraction) //,myticket,myOpeningHour
         {
             if (ModelState.IsValid)
 
-
             {
                // TicketPrice tkprice = new TicketPrice();
-                TicketPrice tktype = new TicketPrice();
+              //  TicketPrice tktype = new TicketPrice();
               //  tktype.lalaTest("My Ticket", "hello");
               
              //   attraction.setMyTicketType(tktype);
@@ -78,6 +77,36 @@ namespace SentosaWebsite.Controllers
 
             return View(attraction);
         }
+        // get create ticket 
+
+        public ActionResult CreateTicket(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Attraction attraction = dataGateway.SelectById(id);
+            if (attraction == null)
+            {
+                return HttpNotFound();
+            }
+            return View(attraction);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateTicket([Bind(Include = "ID, myTicket")] Attraction attraction)
+        {
+            if (ModelState.IsValid)
+            {
+
+               
+                dataGateway.Update(attraction);
+                return RedirectToAction("Index");
+            }
+            return View(attraction);
+        }
+
 
         // GET: Attractions/Edit/5
         public ActionResult Edit(int? id)

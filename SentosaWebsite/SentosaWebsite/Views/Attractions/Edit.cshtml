@@ -56,56 +56,22 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.atOpeningHourWeekend, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.atTransportMode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.atOpeningHourWeekend, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.atOpeningHourWeekend, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.atTransportMode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.atTransportMode, "", new { @class = "text-danger" })
             </div>
         </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.atClosingHourWeekend, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.atTransportDes, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.atClosingHourWeekend, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.atClosingHourWeekend, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.atOpeningHourWeekday, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.atOpeningHourWeekday, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.atOpeningHourWeekday, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.atClosingHourWeekday, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.atClosingHourWeekday, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.atClosingHourWeekday, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.atAdultPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.atAdultPrice, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.atAdultPrice, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.atChildPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.atChildPrice, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.atChildPrice, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.atTransportDes, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.atTransportDes, "", new { @class = "text-danger" })
                 </div>
             </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.atHowToGetThere, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.atHowToGetThere, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.atHowToGetThere, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
+ 
+    <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>

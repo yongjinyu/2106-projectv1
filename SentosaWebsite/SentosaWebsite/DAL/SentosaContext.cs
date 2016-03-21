@@ -4,7 +4,7 @@ namespace SentosaWebsite.DAL
 {
     public class SentosaContext : DbContext
     {
-        public SentosaContext(): base("toto6")
+        public SentosaContext(): base("toto8")
         {
 
         }
