@@ -17,8 +17,8 @@ namespace SentosaWebsite.Models
         public TicketPrice myTicket { get; set; }
         // for setting opening hour
         public Hour myOpeningHour {get ; set;}
-       
-        
+
+
         // public TicketPrice price { get; set; }
         //public void setMyTicketType(TicketPrice obj)
         //{
@@ -27,11 +27,11 @@ namespace SentosaWebsite.Models
         //}
 
 
-        public void setMyTicketType(TicketPrice obj)
-        {
-               this.myTicket = obj;
-          
-        }
+        //public void setMyTicketType(TicketPrice obj)
+        //{
+        //    this.myTicket = obj;
+
+        //}
         public void setMyOpeningHour(Hour obj2)
         {
             this.myOpeningHour = obj2;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SentosaWebsite.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -37,7 +38,8 @@ namespace SentosaWebsite.DAL
 
         public void Save()
         {
-            db.SaveChanges();
+            
+
         }
 
         public IEnumerable<T> SelectAll()

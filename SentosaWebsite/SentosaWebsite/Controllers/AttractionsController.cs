@@ -18,6 +18,7 @@ namespace SentosaWebsite.Controllers
         //private AttractionsGateway dataGateway = new AttractionsGateway();
 
         private DataGateway<Attraction> dataGateway = new DataGateway<Attraction>();
+        private DataGateway<TicketPrice> ticketDataGateway = new DataGateway<TicketPrice>();
         // GET: Attractions
         public ActionResult Index()
         { 
@@ -106,9 +107,9 @@ namespace SentosaWebsite.Controllers
             if (ModelState.IsValid)
 
             {
-               // TicketPrice tkprice = new TicketPrice();
-              //  TicketPrice tktype = new TicketPrice();
-              //  tktype.lalaTest("My Ticket", "hello");
+                //TicketPrice tkprice = new TicketPrice();
+                //TicketPrice tktype = new TicketPrice();
+                //tktype.lalaTest("My Ticket", "hello");
               
              //   attraction.setMyTicketType(tktype);
                 dataGateway.Insert(attraction);
@@ -118,7 +119,7 @@ namespace SentosaWebsite.Controllers
 
             return View(attraction);
         }
-        // get create ticket 
+        // get create ticket
 
         public ActionResult CreateTicket(int? id)
         {
@@ -126,26 +127,30 @@ namespace SentosaWebsite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Attraction attraction = dataGateway.SelectById(id);
-            if (attraction == null)
-            {
-                return HttpNotFound();
-            }
-            return View(attraction);
+            //Attraction attraction = dataGateway.SelectById(id);
+            //if (attraction == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            TicketPrice newTicket = new TicketPrice();
+            //newTicket.atID = (int)id;
+            ViewBag.atID = (int)id;
+            return View(newTicket);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateTicket([Bind(Include = "ID, myTicket")] Attraction attraction)
+        public ActionResult CreateTicket(TicketPrice newTicket)
         {
             if (ModelState.IsValid)
             {
+                //attraction.myTicket.ID = attraction.ID;
 
-               
-                dataGateway.Update(attraction);
+                //dataGateway.Update(attraction);
+                ticketDataGateway.Insert(newTicket);
                 return RedirectToAction("Index");
             }
-            return View(attraction);
+            return View();
         }
 
 
@@ -169,7 +174,7 @@ namespace SentosaWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,atName,atDes,atType,atLocLat,atLocLong,atTransportMode,atTransportDes")] Attraction attraction)
+        public ActionResult Edit([Bind(Include = "atID,atName,atDes,atType,atLocLat,atLocLong,atTransportMode,atTransportDes")] Attraction attraction)
         {
             if (ModelState.IsValid)
             {
