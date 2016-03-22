@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SentosaWebsite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,10 @@ namespace SentosaWebsite.DAL
         void Update(T attraction);
         T Delete(int? id);
         void Save();
+
+        //IEnumerable<TicketPrice> Search(int? atID);
+        IEnumerable<TicketPrice> ticketById(int id, IEnumerable<TicketPrice> allTickets);
+
+
     }
 }

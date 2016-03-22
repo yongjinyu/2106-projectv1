@@ -7,6 +7,9 @@ using System.Web;
 namespace SentosaWebsite.DAL
 {
     //Data Gateway for the Sentosa Website
+
+
+
     public class DataGateway<T> : IDataGateway<T> where T : class
     {
         internal SentosaContext db = new SentosaContext();
@@ -57,6 +60,24 @@ namespace SentosaWebsite.DAL
             db.Entry(obj).State = EntityState.Modified;
             db.SaveChanges();
         }
-    
+
+        //public IEnumerable<TicketPrice> Search(int atID)
+        //{
+        //   return db.Database.SqlQuery("SELECT * FROM " + "lalal " + "WHERE atID = " + atID);
+        //}
+
+        public IEnumerable<TicketPrice> ticketById(int id, IEnumerable<TicketPrice> allTickets)
+        {
+            List<TicketPrice> result = new List<TicketPrice>();
+            foreach (TicketPrice t in allTickets)
+            {
+                if (t.atID == id)
+                {
+                    result.Add(t);
+                }
+            }
+            return result;
+        }
+
     }
 }

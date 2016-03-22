@@ -259,6 +259,9 @@
     <Content Include="Views\Restaurant\Delete.cshtml" />
     <Content Include="Views\Attractions\CreateTicket.cshtml" />
     <Content Include="Views\Restaurant\Edit.cshtml" />
+    <Content Include="Views\Attractions\test.cshtml" />
+    <Content Include="Views\Attractions\DetailsTicketPrice.cshtml" />
+    <Content Include="Views\Attractions\DetailTicketPricing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,50 @@
+﻿@model SentosaWebsite.Models.TicketPrice
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetailsTicketPrice</title>
+</head>
+<body>
+    <div>
+        <h4>TicketPrice</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.atID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.atID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ticketType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ticketType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.price)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

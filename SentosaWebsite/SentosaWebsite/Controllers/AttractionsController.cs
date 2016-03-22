@@ -91,6 +91,48 @@ namespace SentosaWebsite.Controllers
             return View(attraction);
         }
 
+        //display ticket list
+        public ActionResult test()
+        {
+            return View(ticketDataGateway.SelectAll());
+
+        }
+
+        //Get : Attraction/Edit
+        public ActionResult DetailsTicketPrice(int? id) {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TicketPrice ticketprice = ticketDataGateway.SelectById(id);
+            if (ticketprice == null)
+            {
+                return HttpNotFound();
+            }
+            
+            return View(ticketprice);
+        }
+
+
+        public ActionResult DetailTicketPricing(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Attraction attraction = dataGateway.SelectById(id);
+            if (attraction == null)
+            {
+                return HttpNotFound();
+            }
+            IEnumerable<TicketPrice> result = ticketDataGateway.ticketById( (int) id, ticketDataGateway.SelectAll());
+            //
+
+            //TicketPrice ticketprice = ticketDataGateway.ticketById((int)id, ticketDataGateway.SelectAll());
+            return View(result);
+        }
+
         // GET: Attractions/Create
         public ActionResult Create()
         {
@@ -132,21 +174,34 @@ namespace SentosaWebsite.Controllers
             //{
             //    return HttpNotFound();
             //}
+
+
             TicketPrice newTicket = new TicketPrice();
             //newTicket.atID = (int)id;
+            //ticketDataGateway.Insert(newTicket);
             ViewBag.atID = (int)id;
+
             return View(newTicket);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateTicket(TicketPrice newTicket)
+        public ActionResult CreateTicket([Bind(Include = "ID")] Attraction attraction,TicketPrice newTicket)
         {
             if (ModelState.IsValid)
             {
                 //attraction.myTicket.ID = attraction.ID;
-
+                //myTicket.ID = attraction.ID;
                 //dataGateway.Update(attraction);
+
+
+
+
+                //TicketPrice ticketID = new TicketPrice();
+                //ticketID.atID = attraction.ID;
+                //attraction.ID;
+                newTicket.atID = attraction.ID;
+
                 ticketDataGateway.Insert(newTicket);
                 return RedirectToAction("Index");
             }
